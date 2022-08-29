@@ -1,14 +1,11 @@
 //Vanilla JS
 
-//PLAY IN FULL PAGE VIEW!
-
-
 window.addEventListener("DOMContentLoaded", game);
 
 //General sprite load
 var sprite = new Image();
 var spriteExplosion = new Image();
-sprite.src = 'https://res.cloudinary.com/dc4stsmlc/image/upload/v1570612478/Codepen/sprite_bj90k9.png';
+sprite.src = 'Editado2.png';
 
 window.onload = function() {
     spriteExplosion.src = 'https://res.cloudinary.com/dc4stsmlc/image/upload/v1570612478/Codepen/explosion_g9ncyg.png';
@@ -166,26 +163,27 @@ function game() {
         }
     }
 
+
     function planet() {
         ctx.save();
-        ctx.fillStyle   = 'white';
-        ctx.shadowBlur    = 100;
+        ctx.fillStyle   = 'green';
+        ctx.shadowBlur    = 50;
         ctx.shadowOffsetX = 0;
         ctx.shadowOffsetY = 0;
         ctx.shadowColor   = "#999";
 
-        ctx.arc(
+        /*ctx.arc(
             (cW/2),
             (cH/2),
             100,
             0,
             Math.PI * 2
-        );
+        );*/
         ctx.fill();
-
+        
         //Planet rotation
         ctx.translate(cW/2,cH/2);
-        ctx.rotate((_planet.deg += 0.1) * (Math.PI / 180));
+        ctx.rotate((_planet.deg += 0.1) * (Math.PI / 360));
         ctx.drawImage(sprite, 0, 0, 200, 200, -100, -100, 200,200);
         ctx.restore();
     }
