@@ -1,14 +1,13 @@
-//Vanilla JS
 
 window.addEventListener("DOMContentLoaded", game);
-
+//
 //General sprite load
 var sprite = new Image();
 var spriteExplosion = new Image();
 sprite.src = 'Editado2.png';
 
 window.onload = function() {
-    spriteExplosion.src = 'https://res.cloudinary.com/dc4stsmlc/image/upload/v1570612478/Codepen/explosion_g9ncyg.png';
+    spriteExplosion.src = 'explosion_g9ncyg.png';
 };
 
 //Game
@@ -108,6 +107,7 @@ function game() {
                     }
                 } else {
                     canvas.style.cursor = "default";
+                    
                 }
             }
         }
@@ -163,7 +163,6 @@ function game() {
         }
     }
 
-
     function planet() {
         ctx.save();
         ctx.fillStyle   = 'green';
@@ -171,7 +170,6 @@ function game() {
         ctx.shadowOffsetX = 0;
         ctx.shadowOffsetY = 0;
         ctx.shadowColor   = "#999";
-
         /*ctx.arc(
             (cW/2),
             (cH/2),
@@ -347,8 +345,8 @@ function game() {
 
         ctx.restore();
     }
-
-    function start() {
+    
+     function start() {
         if(!gameOver) {
             //Clear
             ctx.clearRect(0, 0, cW, cH);
@@ -386,19 +384,19 @@ function game() {
             ctx.rect(0,0, cW,cH);
             ctx.fill();
 
-            ctx.font = "60px Verdana";
+            ctx.font = "80px Verdana";
             ctx.fillStyle = "white";
             ctx.textAlign = "center";
             ctx.fillText("GAME OVER",cW/2,cH/2 - 150);
 
-            ctx.font = "20px Verdana";
+            ctx.font = "40px Verdana";
             ctx.fillStyle = "white";
             ctx.textAlign = "center";
             ctx.fillText("Total destroyed: "+ destroyed, cW/2,cH/2 + 140);
 
             record = destroyed > record ? destroyed : record;
 
-            ctx.font = "20px Verdana";
+            ctx.font = "30px Verdana";
             ctx.fillStyle = "white";
             ctx.textAlign = "center";
             ctx.fillText("RECORD: "+ record, cW/2,cH/2 + 185);
